@@ -1,0 +1,17 @@
+extends layout
+block content
+  form(action='/generateSlip', method='post')
+    -Object.keys(employeeModel).map(e=>{ 
+    .form-group
+      label #{employeeModel[e]["label"]}
+      input.form-control(name = "#{e}", 
+                          type = "#{employeeModel[e]['type']}", 
+                          placeholder="#{employeeModel[e]['label']}", 
+                          required = employeeModel[e]['required']|| false, 
+                          min = typeof employeeModel[e]['min'] !== "undefined" ? employeeModel[e]['min']:false,
+                          max= typeof employeeModel[e]['max'] !== "undefined" ? employeeModel[e]['max']:false
+                          )
+    -})
+    .form-group
+      button.btn.btn-primary.mb-2(type='submit') Generate Pay Slip
+     

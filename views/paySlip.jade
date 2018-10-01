@@ -1,0 +1,26 @@
+extends layout
+block content
+  a(href='/') Back
+  table.table
+    thead
+      tr
+        th(scope='col') #
+        th(scope='col') Name
+        th(scope='col') Period
+        th(scope='col') Annual Package
+        th(scope='col') Gross Income
+        th(scope='col') Income Tax
+        th(scope='col') Net Income
+        th(scope='col') Super Income
+
+    tbody
+      tr
+        th(scope='row') 1
+        td #{paySlip.fullName}
+        td #{paySlip.period}
+        td #{paySlip.annualPackage}
+        td #{paySlip.grossIncome}
+        td #{paySlip.incomeTax}
+        td #{paySlip.netIncome}
+        td #{paySlip.superRate}
+  
