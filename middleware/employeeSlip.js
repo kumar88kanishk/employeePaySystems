@@ -11,7 +11,6 @@ class EmployeeSlip {
   }
 
   buildData(formRequest) {
-    //console.log(formRequest);
     return new Promise((resolve, reject) => {
       var promise = this.buildPackage(formRequest);
       promise.then(formRequest => {
@@ -70,7 +69,6 @@ class EmployeeSlip {
     console.log("taxSlab====>", ts);
   }
   calculateTax(formRequest) {
-    //console.log("calculateTax, Form Request==>", formRequest);
     return new Promise((resolve, reject) => {
       try {
         let correspondingSlab = this.findSlab(this.employeeJson);
